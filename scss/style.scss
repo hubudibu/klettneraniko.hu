@@ -1,0 +1,242 @@
+
+$brown: #4a3327;
+$blue: #36357D;
+
+$serif: 'PT Serif', serif;
+$captionSerif: 'PT Serif Caption', serif;
+$sansSerif: 'Open Sans', sans-serif;
+
+
+p {
+   margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 3.998em;
+}
+
+h2 {
+  font-size: 2.827em;
+  line-height: 1.2;
+}
+
+/* h3 {font-size: 1.999em;} */
+h3 {
+  font-size: 1.414em;
+  strong {
+    font-size: 1.414em;
+    font-weight: 700;
+  }
+}
+
+/* h2, h4 {font-size: 1.414em;} */
+
+small, .font_small {font-size: 0.707em;}
+
+/*strong {font-weight: 700;}*/
+
+li {
+   list-style: disc;
+   margin: 0 0 .5em 2em
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  transition: box-shadow .15s;
+  &:hover, &:focus {
+   box-shadow: 0 1px 0 $blue;
+  }
+}
+
+hr {
+  width: 10em;
+  background: $brown;
+  border: none;
+  border-bottom: 3px solid $brown;
+  margin: 100px auto;
+}
+
+iframe, img {
+   max-width: 100%;
+}
+
+.highlight {
+  background: $brown;
+  box-shadow: .2em 0 0 .1em $brown, -.2em 0 0 .1em $brown, 0 0 0 .1em $brown;
+  mix-blend-mode: luminosity;
+  /* box-shadow: 0 0 0 .1em $brown; */
+  line-height: 1.4;
+}
+
+html, body {
+  min-height: 100%;
+  font: 18px/1.4 $serif;
+  font-weight: 400;
+  color: white;
+}
+section {
+  position: relative;
+  padding: 100px 0;
+  box-sizing: border-box;
+}
+
+.hero {
+  min-height: 300px;
+  min-height: 100vh;
+  background: $brown url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/82667/114Hcopy.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  background-blend-mode: lighten;
+  font-family: $captionSerif;
+  text-shadow: 0 1px 1px black;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;  bottom: 0;
+    left: 0;  right: 0;
+    background: $brown;
+    opacity: .2;
+  }
+  
+  blockquote {
+    position: relative;
+    width: 18em;
+    line-height: 1.3;
+    font-style: italic;
+    
+    span {
+      &:before {
+        content: '\201C';
+      }
+      &:after {
+        content: '\201D';
+      }
+    }
+    footer {
+      text-align: right;
+      margin-top: .5em;
+    }
+  }
+  
+  header {
+    position: relative;
+    margin: 100px 0;
+    /* letter-spacing: -1px; */
+    /* line-height: 1.2; */
+    h1 {
+      /* font-weight: 700; */
+    font-family: $sansSerif;
+    font-weight: 700;
+    }
+    h2, p {
+      font-size: 1.999em;//1.414em;
+      max-width: 700px;
+    }
+  }
+  
+}
+
+.avatar {
+   width: 25%;
+   padding-bottom: 25%;
+   position: relative;
+   float: left;
+   margin: 0 2em 1em 0;
+   border-radius: 50%;
+   overflow: hidden;
+   img {
+      width: 100%;
+      position: absolute;
+      top: -25px;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .avatar {
+      width: 50%;
+      padding-bottom: 50%;
+      margin: 0 auto 2em;
+      float: none;
+      display: block;
+   }
+}
+
+
+.text {
+  color: lighten(black,10%);
+  text-shadow: none;
+  p, blockquote, ul {
+     font-size: 1.414em;
+     margin: 0 0 3em;
+   }
+  blockquote {
+    font-style: italic;
+    
+      &:before {
+        content: '\201C';
+      }
+      &:after {
+        content: '\201D';
+      }
+  }
+  h2 {
+    font-family: $sansSerif;
+    font-weight: 700;
+     
+     margin: 0 0 1.5em;
+     clear: both;
+  }
+  h3 {
+    margin: 0 0 1em;
+  }
+  
+}
+
+.wrap {
+  max-width: 800px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+   overflow: hidden;
+}
+
+.contact {
+  background: $brown url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/82667/rendelo.jpg) no-repeat 50% 50%;
+   background-size: cover;
+  color: white;
+  h2 {
+    font-size: 3em;
+    margin: 0 0 .5em;
+  }
+  p {
+    font-size: 1.414em;
+    font-weight: 300;
+  }
+}
+
+.methods {
+   background: $brown url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/82667/szobrok.jpg) no-repeat 50% 50%;
+   background-size: cover;
+   color: white;
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    font-size: 13px;
+  }
+  section {
+    padding: 50px 0;
+  }
+  .hero {
+    min-height: 0;
+    header {
+      margin: 75px 0 0;
+    }
+  }
+   hr {
+      margin: 5em auto;
+   }
+}
